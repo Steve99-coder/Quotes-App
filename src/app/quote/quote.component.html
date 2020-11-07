@@ -40,6 +40,33 @@
 
         </div>
     </div>
+    <div id="Favquotes" *ngIf='bestQuote'>
+
+        <div class="row">
+            <div class="card">
+                <div class="card-body ">
+                    <h4 class="card-title text-center text-uppercase ">{{author}}</h4>
+                    <i class="fas fa-quote-left"></i>
+                    <p>{{quote}}</p>
+                    <span class="row pl-3">Created By:
+                        <p>{{user}}</p>
+                        <p class="pl-5">{{days|dateCount}} days ago</p>
+
+                    </span>
+                    <span class="row">
+                        <button class="btn btn-outline-primary "><i class="fa fa-thumbs-up"
+                                aria-hidden="true">{{best}}</i></button>
+                        <button class="btn btn-outline-success "><i class="fa fa-thumbs-down"
+                                aria-hidden="true"></i>{{worst}}</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="bestQuote()">
+            Favourite Quote
+        </button>
+
+    </div>
     <div id="quotes">
         <div class="row mb-4">
 
@@ -49,7 +76,7 @@
                         <h5 class="card-title">Author{{quote.author}}</h5>
                         <p class="card-text">"{{quote.state}}"</p>
                         <h5 class="card-title">Created by ; {{quote.user}}</h5>
-                        <!-- <h5 class="card-footer">{{quote.day|dateCount }} Days ago</h5> -->
+                        <h5 class="card-footer">{{quote.day|dateCount }} Days ago</h5>
                         <button class="btn btn-outline-primary" (click)='upVotes(i)'><i class="fa fa-thumbs-up"
                                 aria-hidden="true">{{quote.upVotes}}</i></button>
                         <button class="btn btn-outline-success" (click)='downVotes(i)'><i class="fa fa-thumbs-down"
