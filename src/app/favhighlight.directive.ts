@@ -5,6 +5,6 @@ import { Directive,ElementRef} from '@angular/core';
 export class FavhighlightDirective {
 
   constructor(private elem:ElementRef){
-    this.elem.nativeElement.style.color='green';
+    this.elem.nativeElement.style.color='Yellow';
   }
 }
