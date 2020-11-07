@@ -40,33 +40,7 @@
 
         </div>
     </div>
-    <div id="Favquotes" *ngIf='bestQuote'>
-
-        <div class="row">
-            <div class="card">
-                <div class="card-body ">
-                    <h4 class="card-title text-center text-uppercase ">{{author}}</h4>
-                    <i class="fas fa-quote-left"></i>
-                    <p>{{quote}}</p>
-                    <span class="row pl-3">Created By:
-                        <p>{{user}}</p>
-                        <p class="pl-5">{{days|dateCount}} days ago</p>
-
-                    </span>
-                    <span class="row">
-                        <button class="btn btn-outline-primary "><i class="fa fa-thumbs-up"
-                                aria-hidden="true">{{highest}}</i></button>
-                        <button class="btn btn-outline-success "><i class="fa fa-thumbs-down"
-                                aria-hidden="true"></i>{{lowest}}</button>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <button type="button" class="btn btn-primary" (click)="selectQuote()">
-            Favourite Quote
-        </button>
-
-    </div>
+    
     <div id="quotes">
         <div class="row mb-4">
 
@@ -101,7 +75,34 @@
                 <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
 
             </div>
+            <div class="col-md-4">
+                <div id="Favquotes" *ngIf='selectQuote'>
 
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-body ">
+                                <h4 class="card-title text-center text-uppercase ">{{author}}</h4>
+                                <i class="fas fa-quote-left"></i>
+                                <p>{{quote}}</p>
+                                <span class="row pl-3">Created By:
+                                    <p>{{user}}</p>
+                                    <p class="pl-5">{{days|dateCount}} days ago</p>
+            
+                                </span>
+                                <span class="row">
+                                    <button class="btn btn-outline-primary "><i class="fa fa-thumbs-up"
+                                            aria-hidden="true">{{highest}}</i></button>
+                                    <button class="btn btn-outline-success "><i class="fa fa-thumbs-down"
+                                            aria-hidden="true"></i>{{lowest}}</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" (click)="selectQuote()">Favourite Quote</button>
+            
+                </div>
+            </div>
         </div>
     </div>
+   
 </div>

@@ -4,3 +4,16 @@
 button{
     margin-right: 10%;
 }
+body{
+    background-image: url("src/assets/back1.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.card{
+    background-image: url("src/assets/back2.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
