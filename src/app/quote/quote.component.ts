@@ -34,6 +34,28 @@ export class QuoteComponent implements OnInit {
       }  
     } 
   }  
+  highest: number;
+  author: string;
+  user: string;
+  quote: string;
+  lowest: number;
+  days: any;
+    
+  selectQuote() { 
+    this.highest = 0; 
+
+    for (let i = 0; i < this.quotes.length; i++) {
+      if (this.quotes[i].upVotes > this.highest) {
+        this.highest = this.quotes[i].upVotes;
+        this.author = this.quotes[i].author;
+        this.user = this.quotes[i].user;
+        this.quote = this.quotes[i].state;
+        this. lowest = this.quotes[i].downVotes;
+        this.days = this.quotes[i].day;
+  
+      }  
+    }
+  }  
   constructor() { } 
 
   ngOnInit(): void {
