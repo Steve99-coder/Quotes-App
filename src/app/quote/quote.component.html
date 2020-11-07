@@ -40,4 +40,32 @@
 
         </div>
     </div>
+    <div id="quotes">
+        <div class="row mb-4">
+
+            <div class="col-md-4" *ngFor=' let quote of quotes; let i = index'>
+                <div class="card">
+                    <div class="card-body ">
+                        <h5 class="card-title">Author {{quote.author}}</h5>
+                        <p class="card-text">"{{quote.state}}"</p>
+                        <h5 class="card-title">Created by ; {{quote.user}}</h5>
+                        <h5 class="card-footer">{{quote.day|dateCount }} Days ago</h5>
+                        <button class="btn btn-outline-primary" (click)='upVotes(i)'><i class="fa fa-thumbs-up"
+                                aria-hidden="true">{{quote.upVotes}}</i></button>
+                        <button class="btn btn-outline-success" (click)='downVotes(i)'><i class="fa fa-thumbs-down"
+                                aria-hidden="true"></i>{{quote.downVotes}}</button>
+                        <i class="fas fa-thumbs-up" (click)='upVotes(i)'></i>
+                        <button class="btn btn-outline-danger" (click)='deleteQuote($event,i)'><i class="fa fa-trash"
+                                aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+
+    </div>
 </div>
