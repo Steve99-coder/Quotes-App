@@ -52,7 +52,7 @@ export class QuoteComponent implements OnInit {
         this.quote = this.quotes[i].state;
         this. lowest = this.quotes[i].downVotes;
         this.days = this.quotes[i].day;
-  
+   
       }  
     }
   }  
