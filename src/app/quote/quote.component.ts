@@ -13,6 +13,12 @@ export class QuoteComponent implements OnInit {
     new Quote(3, 'It’s not whether you get knocked down, it’s whether you get up','Vince Lombardi', 'Jebet Mwikali',new Date(2020,12,12)),
    
   ];
+  addNewQuote(quote){  
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength+1;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
+  }
   constructor() { } 
 
   ngOnInit(): void {
