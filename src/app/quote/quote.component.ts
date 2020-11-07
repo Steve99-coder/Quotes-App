@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Quote } from '../quote';
 
 @Component({
   selector: 'app-quote',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
+  quotes: Quote[] = [ 
+    new Quote(1, 'The best way to get started is to quit talking and begin doing','Walt Disney', 'Wesley John',new Date(2020,11,11)),
+    new Quote(2, 'Attitude is a little thing that makes a BIG difference','Winston Churchill', 'Abigail Wairimu',new Date(2021,3,9)),
+    new Quote(3, 'It’s not whether you get knocked down, it’s whether you get up','Vince Lombardi', 'Jebet Mwikali',new Date(2020,12,12)),
 
+  ];
   constructor() { }
 
   ngOnInit(): void {
