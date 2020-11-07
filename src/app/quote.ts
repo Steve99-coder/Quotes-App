@@ -5,7 +5,7 @@ export class Quote {
     user:string;
     day:Date;
     upVotes:number;
-    downVotes:number;
+    downVotes:number; 
 
     constructor(id:number, state:string, author:string, user:string, day:Date){
         this.id=id;
