@@ -12,7 +12,14 @@ body{
     background-attachment: fixed;
 }
 .card{
-    background-image: url("src/assets/back2.jpeg");
+    background-image: url("src/assets/back4.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 3%;
+}
+.jumbotron{
+    background-image: url("src/assets/back5.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

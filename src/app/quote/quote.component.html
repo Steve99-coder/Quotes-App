@@ -9,7 +9,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="#intro-para"><i class="fa fa-home" aria-hidden="true"></i>
                     Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link active" href="#quotes">Quotes<i class="fa fa-book"
+                <a class="nav-item nav-link active" href="#quotes">Quotes<i class="fa fa-book fa-spin"
                         aria-hidden="true"></i></a>
                 <a class="nav-item nav-link active" href="#Favquotes"><i class="fa fa-bookmark" aria-hidden="true"></i>
                     Fav Quotes</a>
@@ -26,31 +26,35 @@
     <div id="intro-para">
         <div class="card text-center">
             <div class="card-header">
-                <h5 class="card-title text-center text-danger font-weight-bold"><span class="bg-warning"><i
+                <h3 class="card-title text-center text-danger font-weight-bold"><span class="bg-warning"><i
                             class="fa fa-quote-left" aria-hidden="true"></i>
                         The Quotes World<i class="fa fa-quote-right" aria-hidden="true"></i>
-                    </span></h5>
+                    </span></h3>
             </div>
             <div class="card-body">
 
-                <blockquote class="blockquote font-italic text-center">Welcome to your number one stop website for
+                <blockquote class="blockquote font-italic text-center text-white">Welcome to your number one stop website for
                     quotes
                 </blockquote>
             </div>
 
         </div>
     </div>
-    
+    <br>
     <div id="quotes">
         <div class="row mb-4">
 
             <div class="col-md-4" *ngFor=' let quote of quotes; let i = index'>
                 <div class="card">
-                    <div class="card-body ">
-                        <h5 class="card-title">Author{{quote.author}}</h5>
-                        <p class="card-text">"{{quote.state}}"</p>
-                        <h5 class="card-title">Created by ; {{quote.user}}</h5>
-                        <h5 class="card-footer">{{quote.day|dateCount }} Days ago</h5>
+                    <div class="card-body text-white">
+                        <h5 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>
+                            {{quote.author}}</h5>
+                        <p class="card-text"><i class="fa fa-book fa-spin"
+                            aria-hidden="true"></i>"{{quote.state}}"</p>
+                        <h5 class="card-title"><i class="fa fa-edit"
+                            aria-hidden="true"></i>{{quote.user}}</h5>
+                        <h5 class="card-footer"><i class="fa fa-calendar" aria-hidden="true"></i>
+                            {{quote.day|dateCount }} Days ago</h5>
                         <button class="btn btn-outline-primary" (click)='upVotes(i)'><i class="fa fa-thumbs-up"
                                 aria-hidden="true">{{quote.upVotes}}</i></button>
                         <button class="btn btn-outline-success" (click)='downVotes(i)'><i class="fa fa-thumbs-down"
@@ -76,17 +80,19 @@
 
             </div>
             <div class="col-md-4">
-                <div id="Favquotes" *ngIf='selectQuote'>
-
+                <div  *ngIf='selectQuote'>
                     <div class="row">
                         <div class="card">
-                            <div class="card-body ">
-                                <h4 class="card-title text-center text-uppercase ">{{author}}</h4>
+                            <div class="card-body text-white">
+                                <h4 class="card-title text-center text-uppercase "><i class="fa fa-user" aria-hidden="true"></i>{{author}}</h4>
                                 <i class="fas fa-quote-left"></i>
-                                <p>{{quote}}</p>
-                                <span class="row pl-3">Created By:
-                                    <p>{{user}}</p>
-                                    <p class="pl-5">{{days|dateCount}} days ago</p>
+                                <p><i class="fa fa-book fa-spin"
+                                    aria-hidden="true"></i>{{quote}}</p>
+                                <span class="row pl-3">
+                                    <p><i class="fa fa-edit"
+                                        aria-hidden="true"></i>{{user}}</p>
+                                    <p class="pl-5"><i class="fa fa-calendar" aria-hidden="true"></i>
+                                        {{days|dateCount}} days ago</p>
             
                                 </span>
                                 <span class="row">
@@ -97,10 +103,9 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <button type="button" class="btn btn-primary" (click)="selectQuote()">Favourite Quote</button>
-            
+                    </div>            
                 </div>
+                <button class="btn btn-primary" (click)="selectQuote()">Favourite Quote</button>
             </div>
         </div>
     </div>
