@@ -8,6 +8,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { DateCountPipe } from './date-count.pipe';
 import { FavhighlightDirective } from './favhighlight.directive';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FavhighlightDirective } from './favhighlight.directive';
     QuoteComponent,
     QuoteFormComponent,
     DateCountPipe,
-    FavhighlightDirective
+    FavhighlightDirective,
+    DateAgoPipe
   ],
   imports: [
     BrowserModule,
@@ -27,3 +29,4 @@ import { FavhighlightDirective } from './favhighlight.directive';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class AppBootstrapMOdule {}

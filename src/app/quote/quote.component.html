@@ -54,7 +54,7 @@
                         <h5 class="card-title"><i class="fa fa-edit"
                             aria-hidden="true"></i>{{quote.user}}</h5>
                         <h5 class="card-footer"><i class="fa fa-calendar" aria-hidden="true"></i>
-                            {{quote.day|dateCount }} Days ago</h5>
+                            {{quote.day|dateAgo }} </h5>
                         <button class="btn btn-outline-primary" (click)='upVotes(i)'><i class="fa fa-thumbs-up"
                                 aria-hidden="true">{{quote.upVotes}}</i></button>
                         <button class="btn btn-outline-success" (click)='downVotes(i)'><i class="fa fa-thumbs-down"
@@ -92,7 +92,7 @@
                                     <p><i class="fa fa-edit"
                                         aria-hidden="true"></i>{{user}}</p>
                                     <p class="pl-5"><i class="fa fa-calendar" aria-hidden="true"></i>
-                                        {{days|dateCount}} days ago</p>
+                                        {{days|dateAgo}} </p>
             
                                 </span>
                                 <span class="row">
