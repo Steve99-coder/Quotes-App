@@ -33,7 +33,8 @@
             </div>
             <div class="card-body">
 
-                <blockquote class="blockquote font-italic text-center text-white">Welcome to your number one stop website for
+                <blockquote class="blockquote font-italic text-center text-white">Welcome to your number one stop
+                    website for
                     quotes
                 </blockquote>
             </div>
@@ -45,16 +46,17 @@
         <div class="row mb-4">
 
             <div class="col-md-4" *ngFor=' let quote of quotes; let i = index'>
+               
+                <h1 *ngIf="quote ===  Highquote()" appFavhighlight>Favourite quote</h1>
                 <div class="card">
                     <div class="card-body text-white">
-                        <h5 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>
-                            {{quote.author}}</h5>
-                        <p class="card-text"><i class="fa fa-book fa-spin"
-                            aria-hidden="true"></i>"{{quote.state}}"</p>
-                        <h5 class="card-title"><i class="fa fa-edit"
-                            aria-hidden="true"></i>{{quote.user}}</h5>
-                        <h5 class="card-footer"><i class="fa fa-calendar" aria-hidden="true"></i>
-                            {{quote.day|dateAgo }} </h5>
+                        <button (click)='toggleDetails(i)' class="btn btn-success text-center">Show Quote</button>
+
+                        <div *ngIf = 'quote.showDescription'>
+                            <app-quote-detail  [quote]='quote' (isComplete) = 'completeQuote($event,i)'></app-quote-detail>
+        
+                        </div>
+                       
                         <button class="btn btn-outline-primary" (click)='upVotes(i)'><i class="fa fa-thumbs-up"
                                 aria-hidden="true">{{quote.upVotes}}</i></button>
                         <button class="btn btn-outline-success" (click)='downVotes(i)'><i class="fa fa-thumbs-down"
@@ -77,37 +79,9 @@
         <div class="row">
             <div class="col-md-4">
                 <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-
-            </div>
-            <div class="col-md-4">
-                <div  *ngIf='selectQuote'>
-                    <div class="row">
-                        <div class="card" >
-                            <div class="card-body text-white" appFavhighlight>
-                                <h4 class="card-title text-center text-uppercase "><i class="fa fa-user" aria-hidden="true"></i>{{author}}</h4>
-                                <i class="fas fa-quote-left"></i>
-                                <p><i class="fa fa-book fa-spin"
-                                    aria-hidden="true"></i>{{quote}}</p>
-                                <span class="row pl-3">
-                                    <p><i class="fa fa-edit"
-                                        aria-hidden="true"></i>{{user}}</p>
-                                    <p class="pl-5"><i class="fa fa-calendar" aria-hidden="true"></i>
-                                        {{days|dateAgo}} </p>
-            
-                                </span>
-                                <span class="row">
-                                    <button class="btn btn-outline-primary "><i class="fa fa-thumbs-up"
-                                            aria-hidden="true">{{highest}}</i></button>
-                                    <button class="btn btn-outline-success "><i class="fa fa-thumbs-down"
-                                            aria-hidden="true"></i>{{lowest}}</button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>            
-                </div>
-                <button class="btn btn-primary" (click)="selectQuote()">Favourite Quote</button>
             </div>
         </div>
+       
     </div>
-   
 </div>
+
